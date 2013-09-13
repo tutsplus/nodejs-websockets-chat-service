@@ -1,10 +1,10 @@
-//code to debug heroku with simple app
+//code to debug heroku with simple app  sdf
 
 // var express = require('express'),
 // 	app = express();
 
 // app.get('/', function (req, res) {
-// 	res.send("Hello world");
+// 	res.send("Hello world bad ass");
 
 // app.get('*', function (req, res) {
 // 	res.send("page not found");
@@ -42,7 +42,8 @@ var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
-console.log("express server started on 8080");
+console.log("express server started on 3000");
+
 io.sockets.on('connection', function (socket) {
 	socket.on('setPseudo', function (data) {
 		socket.set('pseudo', data);
