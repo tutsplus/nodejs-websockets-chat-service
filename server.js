@@ -44,6 +44,12 @@ app.listen(port, function() {
 });
 console.log("express server started on 3000");
 
+
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
 io.sockets.on('connection', function (socket) {
 	socket.on('setPseudo', function (data) {
 		socket.set('pseudo', data);
