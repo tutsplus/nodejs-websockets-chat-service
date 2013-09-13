@@ -1,12 +1,5 @@
 //branch for trying chatnode.js setup
 
-//var express = require('express'), app = express.createServer();
-
-// var http = require('http');
-// var express = require('express'), app = express();
-// var server = http.createServer(app).listen(port);
-// var jade = require('jade');
-// var io = require('socket.io').listen(server);
 
 
 var appPort =  process.env.PORT || 3000;
@@ -27,19 +20,11 @@ app.configure(function() {
 app.get('/', function(req, res){
   res.render('home.jade');
 });
-//app.listen(3000);
+
 
 
 server.listen(appPort);
 // app.listen(appPort);
-console.log("Server listening on port" + appPort);
-
-
-// var port = process.env.PORT || 3000;
-// app.listen(port, function() {
-//   console.log("Listening on " + port);
-// });
-// console.log("express server started on 3000");
 
 
 io.configure(function () { 
