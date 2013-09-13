@@ -2,7 +2,7 @@
 
 var http = require('http');
 var express = require('express'), app = express();
-var server = http.createServer(app).listen(3000);
+var server = http.createServer(app).listen(port);
 var jade = require('jade');
 var io = require('socket.io').listen(server);
 app.set('views', __dirname + '/views');
@@ -15,6 +15,22 @@ app.get('/', function(req, res){
   res.render('home.jade');
 });
 //app.listen(3000);
+<<<<<<< Updated upstream
+=======
+//
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
+console.log("express server started on 3000");
+
+
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
+>>>>>>> Stashed changes
 io.sockets.on('connection', function (socket) {
 	socket.on('setPseudo', function (data) {
 		socket.set('pseudo', data);
