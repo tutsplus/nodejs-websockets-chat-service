@@ -15,9 +15,7 @@ app.get('/', function(req, res){
   res.render('home.jade');
 });
 //app.listen(3000);
-<<<<<<< Updated upstream
-=======
-//
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("Listening on " + port);
@@ -30,7 +28,7 @@ io.configure(function () {
   io.set("polling duration", 10); 
 });
 
->>>>>>> Stashed changes
+
 io.sockets.on('connection', function (socket) {
 	socket.on('setPseudo', function (data) {
 		socket.set('pseudo', data);
