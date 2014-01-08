@@ -1,6 +1,7 @@
 var socket = io.connect();
 function addMessage(msg, pseudo) {
-	$("#chatEntries").append('<div class="message"><p>' + pseudo + ' : ' + msg + '</p></div>');
+	$('#chatEntries').append($('<div class="message"></div>'));
+	$('#chatEntries .message:last').append($('<p></p>').text(pseudo + ': ' + msg ));
 }
 function sentMessage() {
 	if ($('#messageInput').val() != "") 
